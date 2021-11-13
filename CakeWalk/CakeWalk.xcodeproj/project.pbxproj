@@ -1,0 +1,384 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B270B4C9273F70D900F84F2C /* StepCounterDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */; };
+		B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */; };
+		B2FCE0BC273AC7600074FCCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0BB273AC7600074FCCB /* ContentView.swift */; };
+		B2FCE0BE273AC7620074FCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCE0BD273AC7620074FCCB /* Assets.xcassets */; };
+		B2FCE0C1273AC7620074FCCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCE0C0273AC7620074FCCB /* Preview Assets.xcassets */; };
+		B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0C7273AC78A0074FCCB /* HealthStore.swift */; };
+		B2FCE0CD273ACDD90074FCCB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FCE0CC273ACDD90074FCCB /* HealthKit.framework */; };
+		B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0CE273ADCCF0074FCCB /* Step.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterDocument.swift; sourceTree = "<group>"; };
+		B2FCE0B6273AC7600074FCCB /* CakeWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeWalkApp.swift; sourceTree = "<group>"; };
+		B2FCE0BB273AC7600074FCCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B2FCE0BD273AC7620074FCCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2FCE0C0273AC7620074FCCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B2FCE0C7273AC78A0074FCCB /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		B2FCE0C9273ACAD90074FCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B2FCE0CA273ACDD90074FCCB /* CakeWalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CakeWalk.entitlements; sourceTree = "<group>"; };
+		B2FCE0CC273ACDD90074FCCB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B2FCE0CE273ADCCF0074FCCB /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2FCE0B3273AC7600074FCCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FCE0CD273ACDD90074FCCB /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2FCE0AD273AC7600074FCCB = {
+			isa = PBXGroup;
+			children = (
+				B2FCE0B8273AC7600074FCCB /* CakeWalk */,
+				B2FCE0B7273AC7600074FCCB /* Products */,
+				B2FCE0CB273ACDD90074FCCB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B2FCE0B7273AC7600074FCCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2FCE0B6273AC7600074FCCB /* CakeWalk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2FCE0B8273AC7600074FCCB /* CakeWalk */ = {
+			isa = PBXGroup;
+			children = (
+				B2FCE0CA273ACDD90074FCCB /* CakeWalk.entitlements */,
+				B2FCE0C9273ACAD90074FCCB /* Info.plist */,
+				B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */,
+				B2FCE0BB273AC7600074FCCB /* ContentView.swift */,
+				B2FCE0CE273ADCCF0074FCCB /* Step.swift */,
+				B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */,
+				B2FCE0C7273AC78A0074FCCB /* HealthStore.swift */,
+				B2FCE0BD273AC7620074FCCB /* Assets.xcassets */,
+				B2FCE0BF273AC7620074FCCB /* Preview Content */,
+			);
+			path = CakeWalk;
+			sourceTree = "<group>";
+		};
+		B2FCE0BF273AC7620074FCCB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B2FCE0C0273AC7620074FCCB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B2FCE0CB273ACDD90074FCCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2FCE0CC273ACDD90074FCCB /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2FCE0B5273AC7600074FCCB /* CakeWalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2FCE0C4273AC7620074FCCB /* Build configuration list for PBXNativeTarget "CakeWalk" */;
+			buildPhases = (
+				B2FCE0B2273AC7600074FCCB /* Sources */,
+				B2FCE0B3273AC7600074FCCB /* Frameworks */,
+				B2FCE0B4273AC7600074FCCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CakeWalk;
+			productName = CakeWalk;
+			productReference = B2FCE0B6273AC7600074FCCB /* CakeWalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2FCE0AE273AC7600074FCCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					B2FCE0B5273AC7600074FCCB = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = B2FCE0B1273AC7600074FCCB /* Build configuration list for PBXProject "CakeWalk" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2FCE0AD273AC7600074FCCB;
+			productRefGroup = B2FCE0B7273AC7600074FCCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2FCE0B5273AC7600074FCCB /* CakeWalk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2FCE0B4273AC7600074FCCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FCE0C1273AC7620074FCCB /* Preview Assets.xcassets in Resources */,
+				B2FCE0BE273AC7620074FCCB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2FCE0B2273AC7600074FCCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2FCE0BC273AC7600074FCCB /* ContentView.swift in Sources */,
+				B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */,
+				B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */,
+				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,
+				B270B4C9273F70D900F84F2C /* StepCounterDocument.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B2FCE0C2273AC7620074FCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2FCE0C3273AC7620074FCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2FCE0C5273AC7620074FCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CakeWalk/CakeWalk.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CakeWalk/Preview Content\"";
+				DEVELOPMENT_TEAM = YLHT46ZLDT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CakeWalk/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app requires access to your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires acess to your health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahilsahucode.CakeWalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2FCE0C6273AC7620074FCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CakeWalk/CakeWalk.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CakeWalk/Preview Content\"";
+				DEVELOPMENT_TEAM = YLHT46ZLDT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CakeWalk/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app requires access to your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app requires acess to your health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sahilsahucode.CakeWalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2FCE0B1273AC7600074FCCB /* Build configuration list for PBXProject "CakeWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FCE0C2273AC7620074FCCB /* Debug */,
+				B2FCE0C3273AC7620074FCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2FCE0C4273AC7620074FCCB /* Build configuration list for PBXNativeTarget "CakeWalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2FCE0C5273AC7620074FCCB /* Debug */,
+				B2FCE0C6273AC7620074FCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2FCE0AE273AC7600074FCCB /* Project object */;
+}
