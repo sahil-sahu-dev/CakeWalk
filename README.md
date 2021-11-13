@@ -1,2 +1,6 @@
 # CakeWalk
-Uses HealthKit to get calories burned, steps and distance covered. Recommends food items based on the data
+Uses HealthKit to get calories burned, steps and distance covered. 
+
+
+### Roadmap
+Allow multiple users to compare how many calories, steps, distance they have covered.
