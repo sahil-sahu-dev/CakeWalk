@@ -1,2 +1,4 @@
 # CakeWalk
-Uses HealthKit to get calories burned, steps and distance covered. Recommends food items based on the data
+Uses HealthKit to get number of steps completed. Allow multiple users to compare steps using firebase firestore   
+
+
