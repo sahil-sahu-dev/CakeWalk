@@ -48,73 +48,14 @@ class HealthStore {
     }
     
     
-    public func calculateActiveCaloriedBurned(completion: @escaping (HKStatisticsCollection) -> Void) {
-        let calType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
-        let startDate = Calendar.current.date(byAdding: .day, value: -6, to: Date())
-        let anchorDate = Date.mondayAt12AM()
-        let daily = DateComponents(day:1)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .init())
-
-        query = HKStatisticsCollectionQuery.init(quantityType: calType, quantitySamplePredicate: predicate, options: .init(), anchorDate: anchorDate, intervalComponents: daily)
-        
-        query!.initialResultsHandler = {query, statisticsCollection, error in
-            if statisticsCollection != nil{
-                
-                completion(statisticsCollection!)
-            }
-        }
-
-        
-        if let healthStore = healthStore, let query = self.query {
-            healthStore.execute(query)
-        }
-    }
-    
-    
-    public func calculateDistance(completion: @escaping (HKStatisticsCollection) -> Void) {
-        
-        let calType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
-        
-        let startDate = Calendar.current.date(byAdding: .day, value: -6, to: Date())
-        let anchorDate = Date.mondayAt12AM()
-        let daily = DateComponents(day:1)
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .init())
-
-        query = HKStatisticsCollectionQuery.init(quantityType: calType, quantitySamplePredicate: predicate, options: .init(), anchorDate: anchorDate, intervalComponents: daily)
-        
-        query!.initialResultsHandler = {query, statisticsCollection, error in
-            if statisticsCollection != nil{
-                
-                completion(statisticsCollection!)
-            }
-            
-        }
-
-        
-        if let healthStore = healthStore, let query = self.query {
-            healthStore.execute(query)
-        }
-    }
-    
-    
     
     public func requestAuthorization(completion: @escaping (Bool) -> Void) {
         
         let stepType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
-        let calType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
-        let distanceType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
         
         guard let healthStore = self.healthStore else { return completion(false)}
         
         healthStore.requestAuthorization(toShare: [], read: [stepType]) { (success, error) in
-            completion(success)
-        }
-        
-        healthStore.requestAuthorization(toShare: [], read: [calType]) { (success, error) in
-            completion(success)
-        }
-        
-        healthStore.requestAuthorization(toShare: [], read: [distanceType]) { (success, error) in
             completion(success)
         }
         

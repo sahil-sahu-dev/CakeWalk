@@ -11,7 +11,8 @@ import SwiftUI
 struct CakeWalkApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(healthStore: HealthStore(), stepCounterDocument: StepCounterDocument())
+            UserStepperView(healthStore: HealthStore())
+                .environmentObject(StepCounterDocument())
         }
     }
 }
