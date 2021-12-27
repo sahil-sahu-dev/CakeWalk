@@ -21,18 +21,13 @@ class StepCounterDocument: ObservableObject {
         
     }
     
-    public func setSteps(steps: Step) {
-        stepModel.setSteps(with: steps)
-    }
-    
-    public func getSteps()-> Step {
+    public func getSteps()-> Step? {
         return stepModel.getSteps()
     }
     
-    public func getStepsCount()-> Int {
-        return stepModel.getStepsCount() ?? 0
+    public func getStepsCount() -> Int? {
+        return stepModel.getStepsCount()
     }
-    
     
     
     
@@ -43,27 +38,31 @@ class StepCounterDocument: ObservableObject {
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             
             let count = statistics.sumQuantity()?.doubleValue(for: .count())
-            
             let step = Step(count: Int(count ?? 0))
             newSteps = step
 
         }
         
         //set steps with updated steps
-        setSteps(steps: newSteps)
+        stepModel.setSteps(with: newSteps)
+        
         let document = FirebaseManager.shared.firestore.collection("steps").document()
+        let numberOfSteps = FirebaseManager.shared.firestore.collection("steps").accessibilityElementCount()
         
-        let healthData = ["Steps": stepModel.getStepsCount() ?? 0, "id": 0] as [String : Any]
-        
-        document.setData(healthData) { error in
-            if let error = error{
-                print("Error stroring health data to firestore \(error)")
-                return
-            }
+        print(numberOfSteps)
+        if let stepsCount = stepModel.getStepsCount(), let id = stepModel.getId() {
             
-            print("Stored health data to firestore")
+            let healthData = ["Steps": stepsCount , "id": id.uuidString] as [String : Any]
+            
+            document.setData(healthData) { error in
+                if let error = error{
+                    print("Error stroring health data to firestore \(error)")
+                    return
+                }
+                
+                print("Stored health data to firestore")
+            }
         }
-        
     }
     
     

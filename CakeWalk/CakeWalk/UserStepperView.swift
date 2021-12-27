@@ -17,46 +17,48 @@ struct UserStepperView: View {
     var body: some View {
         
         NavigationView {
-            
-            
-            VStack(alignment: .leading){
-                    Text("\(stepCounterDocument.getStepsCount())")
-            }
+            ZStack{
+                Color(.init(white: 0, alpha: 0.15)).edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    
+                VStack{
+                    Text("\(stepCounterDocument.getStepsCount() ?? 0)")
+                    GraphView()
+                }
+
                 
-            
-            .padding()
-            .onAppear {
-                if let healthStore = healthStore {
-                    healthStore.requestAuthorization{ success in
-                        
-                        if success {
-                            healthStore.calculateSteps {statistics in
-                                
-                                DispatchQueue.main.async {
-                                    stepCounterDocument.updateSteps(with: statistics)
+                .padding()
+                .onAppear {
+                    if let healthStore = healthStore {
+                        healthStore.requestAuthorization{ success in
+    
+                            if success {
+                                healthStore.calculateSteps {statistics in
+    
+                                    DispatchQueue.main.async {
+                                        stepCounterDocument.updateSteps(with: statistics)
+                                    }
                                 }
-                                
-                                
+    
                             }
-                            
+    
                         }
-                        
                     }
                 }
+                
             }
-            
+                
+            }
             .navigationTitle("Your steps data")
-        }
-        
     }
+}
+
 }
 
 
 
-
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainStepperView()
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserStepperView()
+    }
+}

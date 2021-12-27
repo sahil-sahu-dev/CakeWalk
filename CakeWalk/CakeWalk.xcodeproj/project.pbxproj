@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B207E7D92765D29D00F39D0B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B207E7D82765D29D00F39D0B /* GraphView.swift */; };
 		B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */; };
 		B21E6081275A85D200DD2AD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */; };
 		B2523561275248BF00F20DAB /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2523560275248BF00F20DAB /* FirebaseManager.swift */; };
@@ -15,6 +16,7 @@
 		B25235682752498400F20DAB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B25235672752498400F20DAB /* FirebaseStorage */; };
 		B252356C2752598000F20DAB /* StepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252356B2752598000F20DAB /* StepCardView.swift */; };
 		B270B4C9273F70D900F84F2C /* StepCounterDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */; };
+		B29723A327611D8800570BA8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29723A227611D8800570BA8 /* LoginView.swift */; };
 		B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */; };
 		B2FCE0BC273AC7600074FCCB /* UserStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */; };
 		B2FCE0BE273AC7620074FCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCE0BD273AC7620074FCCB /* Assets.xcassets */; };
@@ -25,11 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B207E7D82765D29D00F39D0B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepperView.swift; sourceTree = "<group>"; };
 		B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2523560275248BF00F20DAB /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B252356B2752598000F20DAB /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
 		B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCounterDocument.swift; sourceTree = "<group>"; };
+		B29723A227611D8800570BA8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B2FCE0B6273AC7600074FCCB /* CakeWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeWalkApp.swift; sourceTree = "<group>"; };
 		B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStepperView.swift; sourceTree = "<group>"; };
@@ -83,8 +87,10 @@
 				B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */,
 				B252356B2752598000F20DAB /* StepCardView.swift */,
 				B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */,
+				B207E7D82765D29D00F39D0B /* GraphView.swift */,
 				B2FCE0CE273ADCCF0074FCCB /* Step.swift */,
 				B270B4C8273F70D900F84F2C /* StepCounterDocument.swift */,
+				B29723A227611D8800570BA8 /* LoginView.swift */,
 				B2523560275248BF00F20DAB /* FirebaseManager.swift */,
 				B2FCE0C7273AC78A0074FCCB /* HealthStore.swift */,
 				B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */,
@@ -192,7 +198,9 @@
 				B2523561275248BF00F20DAB /* FirebaseManager.swift in Sources */,
 				B2FCE0BC273AC7600074FCCB /* UserStepperView.swift in Sources */,
 				B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */,
+				B29723A327611D8800570BA8 /* LoginView.swift in Sources */,
 				B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */,
+				B207E7D92765D29D00F39D0B /* GraphView.swift in Sources */,
 				B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */,
 				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,
 				B252356C2752598000F20DAB /* StepCardView.swift in Sources */,
