@@ -12,7 +12,12 @@ struct UserStepperView: View {
     
     
     var healthStore: HealthStore?
-    @EnvironmentObject var stepCounterDocument: StepCounterDocument
+    @EnvironmentObject var userStepperViewModel: UserStepperViewModel
+    @State var shouldShowLogOutOptions = false
+    
+    var isLoggedIn: Bool {
+        FirebaseManager.shared.auth.currentUser == nil ? false : true
+    }
     
     var body: some View {
         
@@ -21,38 +26,68 @@ struct UserStepperView: View {
                 Color(.init(white: 0, alpha: 0.15)).edgesIgnoringSafeArea(.all)
                 ScrollView {
                     
-                VStack{
-                    Text("\(stepCounterDocument.getStepsCount() ?? 0)")
-                    GraphView()
-                }
-
-                
-                .padding()
-                .onAppear {
-                    if let healthStore = healthStore {
-                        healthStore.requestAuthorization{ success in
-    
-                            if success {
-                                healthStore.calculateSteps {statistics in
-    
-                                    DispatchQueue.main.async {
-                                        stepCounterDocument.updateSteps(with: statistics)
+                    VStack{
+                        Text("\(userStepperViewModel.getStepsCount())")
+                        GraphView()
+                    }
+                    
+                    
+                    .padding()
+                    .onAppear {
+                        if let healthStore = healthStore {
+                            healthStore.requestAuthorization{ success in
+                                
+                                if success {
+                                    healthStore.calculateSteps { statistics in
+                                        
+                                        DispatchQueue.main.async {
+                                            userStepperViewModel.updateSteps(with: statistics)
+                                        }
                                     }
+                                    
                                 }
-    
+                                
                             }
-    
                         }
                     }
+                    
                 }
-                
-            }
                 
             }
             .navigationTitle("Your steps data")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        shouldShowLogOutOptions.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color(.label))
+                    }
+                }
+            }
+            .actionSheet(isPresented: $shouldShowLogOutOptions) {
+                .init(title: Text("Settings"), message: Text("What do you want to do?"), buttons: [
+                    .destructive(Text("Sign Out"), action: {
+                        
+                        userStepperViewModel.handleSignOut()
+                        
+                        print("handle sign out")
+                    }),
+                    .cancel()
+                ])
+            }
+            .fullScreenCover(isPresented: $userStepperViewModel.isUserCurrentlyLoggedOut, onDismiss: nil) {
+                LoginView {
+                    
+                    userStepperViewModel.fetchCurrentUser()
+                    self.userStepperViewModel.isUserCurrentlyLoggedOut = false
+                    
+                }
+            }
+        }
     }
-}
-
+    
 }
 
 

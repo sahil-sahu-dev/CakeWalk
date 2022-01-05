@@ -12,7 +12,7 @@ struct StepUser: Identifiable {
     
     var id: String{uid}
     var uid: String
-    let count: Int
+    var count: Double?
     let name: String
     
 }

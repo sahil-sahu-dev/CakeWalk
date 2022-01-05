@@ -16,7 +16,7 @@ class FirebaseManager: NSObject {
     let firestore: Firestore
     
    override init() {
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         self.auth = Auth.auth()
         self.storage = Storage.storage()
         self.firestore = Firestore.firestore()

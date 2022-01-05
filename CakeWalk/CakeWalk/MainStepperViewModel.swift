@@ -21,23 +21,26 @@ class MainStepperViewModel: ObservableObject {
     }
     
     private func fetchAllUsers() {
-        FirebaseManager.shared.firestore.collection("steps").getDocuments { healthDataDocument, error in
-            
+
+        FirebaseManager.shared.firestore.collection("users").getDocuments { healthDataDocument, error in
+
             if let error = error {
                 print("Error fetching data from firestore \(error)")
                 self.errorMessage = error.localizedDescription
                 return
             }
-            
+
             healthDataDocument?.documents.forEach { healthData in
-                let name = healthData["Name"] as? String ?? ""
-                let steps = healthData["Steps"] as? Int ?? 0
-                let uid = healthData["id"] as? String ?? ""
-                let stepData = StepUser(uid: uid,count: steps, name: name)
                 
+                let name = healthData["name"] as? String ?? ""
+                let steps = healthData["steps"] as? Double ?? 0
+                let uid = healthData["uid"] as? String ?? ""
+                
+                let stepData = StepUser(uid: uid,count: steps, name: name)
+
                 self.allUserHealthData.append(stepData)
             }
-            
+
         }
     }
     
