@@ -14,13 +14,11 @@ struct CakeWalkApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    init() {
-        FirebaseApp.configure()
-    }
+    
     
     var body: some Scene {
         WindowGroup {
-            UserStepperView(healthStore: HealthStore()).environmentObject(UserStepperViewModel())
+            MainStepperView().environmentObject(UserStepperViewModel())
         }
     }
 }
@@ -28,7 +26,16 @@ struct CakeWalkApp: App {
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    
    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        
+        return true
     }
 }

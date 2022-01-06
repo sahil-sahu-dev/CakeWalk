@@ -8,14 +8,29 @@
 import SwiftUI
 
 struct MainStepperView: View {
+    
+    @EnvironmentObject var userStepperViewModel: UserStepperViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            AllUsersView(healthStore: HealthStore())
+                .environmentObject(AllUsersViewModel())
+               
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
+            UserStepperView()
+              
+                .tabItem {
+                    Image(systemName: "person.fill")
+                }
+        }
     }
 }
 
 struct MainStepperView_Previews: PreviewProvider {
     static var previews: some View {
-        MainStepperView()
+        MainStepperView().environmentObject(UserStepperViewModel())
     }
 }
 

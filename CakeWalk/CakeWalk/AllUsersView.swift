@@ -11,6 +11,11 @@ struct AllUsersView: View {
     
     @EnvironmentObject var userStepperViewModel: UserStepperViewModel
     @EnvironmentObject var allUsersViewModel: AllUsersViewModel
+    var healthStore: HealthStore?
+    
+    init(healthStore: HealthStore) {
+        self.healthStore = healthStore
+    }
     
     @State var shouldShowLogOutOptions = false
   
@@ -25,6 +30,26 @@ struct AllUsersView: View {
                     
                 }
             }
+            
+            .onAppear {
+                if let healthStore = healthStore {
+                    healthStore.requestAuthorization{ success in
+                        
+                        if success {
+                            healthStore.calculateSteps { statistics in
+                                
+                                DispatchQueue.main.async {
+                                    userStepperViewModel.updateSteps(with: statistics)
+                                }
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+            
+            .navigationBarTitle("Home")
             
             .toolbar {
                 ToolbarItem {
@@ -62,6 +87,8 @@ struct AllUsersView: View {
 
 struct AllUsersView_Previews: PreviewProvider {
     static var previews: some View {
-        AllUsersView()
+        AllUsersView(healthStore: HealthStore())
+            .environmentObject(AllUsersViewModel())
+            .environmentObject(UserStepperViewModel())
     }
 }

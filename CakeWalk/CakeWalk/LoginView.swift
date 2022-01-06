@@ -14,9 +14,8 @@ struct LoginView: View{
     let didCompleteLoginProcess: () -> ()
 
     @State private var email = ""
-    @State private var password = ""
     @State private var name = ""
-    
+    @State private var uid = ""
     
     
     var body: some View {
@@ -30,6 +29,20 @@ struct LoginView: View{
                     
                     handleAction { error, success in
                         if success == 1 {
+                           
+                            let data = ["uid" : uid, "name": name, "count": 0] as [String:Any]
+                            
+                            FirebaseManager.shared.firestore.collection("users").document(uid).setData(data
+                            ){ error in
+                                
+                                if let error = error {
+                                    print(error)
+                                    return
+                                }
+                                
+                                print("Added new user")
+                            }
+                            
                             self.didCompleteLoginProcess()
                         }
                     }
@@ -63,6 +76,7 @@ struct LoginView: View{
     
     
     private func handleAction(completion: @escaping((Error?, Int?) -> Void)) {
+        
         guard let clientId = FirebaseApp.app()?.options.clientID else {return}
         
         let config = GIDConfiguration(clientID: clientId)
@@ -98,6 +112,7 @@ struct LoginView: View{
                 }
                 
                 self.name = user.displayName ?? "name"
+                self.uid = user.uid
                 print(user.displayName ?? "Success")
                 completion(nil,1)
             }

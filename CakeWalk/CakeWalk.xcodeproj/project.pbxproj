@@ -19,6 +19,8 @@
 		B2ACBDE9277ED35A00C0B805 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2ACBDE8277ED35A00C0B805 /* GoogleSignIn */; };
 		B2C6158227807A1F00DD1055 /* MainStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */; };
 		B2C6158427807E9200DD1055 /* UserStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */; };
+		B2E423422785741500F77813 /* AllUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E423412785741500F77813 /* AllUsersView.swift */; };
+		B2E423442785761200F77813 /* AllUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E423432785761200F77813 /* AllUsersViewModel.swift */; };
 		B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */; };
 		B2FCE0BC273AC7600074FCCB /* UserStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */; };
 		B2FCE0BE273AC7620074FCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCE0BD273AC7620074FCCB /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		B29723A227611D8800570BA8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepperViewModel.swift; sourceTree = "<group>"; };
 		B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStepperViewModel.swift; sourceTree = "<group>"; };
+		B2E423412785741500F77813 /* AllUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersView.swift; sourceTree = "<group>"; };
+		B2E423432785761200F77813 /* AllUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersViewModel.swift; sourceTree = "<group>"; };
 		B2FCE0B6273AC7600074FCCB /* CakeWalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeWalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeWalkApp.swift; sourceTree = "<group>"; };
 		B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStepperView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				B252356B2752598000F20DAB /* StepCardView.swift */,
 				B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */,
 				B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */,
+				B2E423412785741500F77813 /* AllUsersView.swift */,
+				B2E423432785761200F77813 /* AllUsersViewModel.swift */,
 				B207E7D82765D29D00F39D0B /* GraphView.swift */,
 				B2FCE0CE273ADCCF0074FCCB /* Step.swift */,
 				B29723A227611D8800570BA8 /* LoginView.swift */,
@@ -213,6 +219,8 @@
 				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,
 				B252356C2752598000F20DAB /* StepCardView.swift in Sources */,
 				B2C6158427807E9200DD1055 /* UserStepperViewModel.swift in Sources */,
+				B2E423442785761200F77813 /* AllUsersViewModel.swift in Sources */,
+				B2E423422785741500F77813 /* AllUsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

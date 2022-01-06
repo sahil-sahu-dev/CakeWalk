@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GraphView: View {
     
+    @EnvironmentObject var userStepperViewModel: UserStepperViewModel
+    
     var flameImage: some View {
         Image(systemName: "flame.fill").foregroundColor(.orange)
     }
