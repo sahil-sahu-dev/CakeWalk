@@ -17,7 +17,6 @@
 		B252356C2752598000F20DAB /* StepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252356B2752598000F20DAB /* StepCardView.swift */; };
 		B29723A327611D8800570BA8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29723A227611D8800570BA8 /* LoginView.swift */; };
 		B2ACBDE9277ED35A00C0B805 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2ACBDE8277ED35A00C0B805 /* GoogleSignIn */; };
-		B2C6158227807A1F00DD1055 /* MainStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */; };
 		B2C6158427807E9200DD1055 /* UserStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */; };
 		B2E423422785741500F77813 /* AllUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E423412785741500F77813 /* AllUsersView.swift */; };
 		B2E423442785761200F77813 /* AllUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E423432785761200F77813 /* AllUsersViewModel.swift */; };
@@ -37,7 +36,6 @@
 		B2523560275248BF00F20DAB /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B252356B2752598000F20DAB /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
 		B29723A227611D8800570BA8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepperViewModel.swift; sourceTree = "<group>"; };
 		B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStepperViewModel.swift; sourceTree = "<group>"; };
 		B2E423412785741500F77813 /* AllUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersView.swift; sourceTree = "<group>"; };
 		B2E423432785761200F77813 /* AllUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersViewModel.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */,
 				B252356B2752598000F20DAB /* StepCardView.swift */,
 				B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */,
-				B2C6158127807A1F00DD1055 /* MainStepperViewModel.swift */,
 				B2E423412785741500F77813 /* AllUsersView.swift */,
 				B2E423432785761200F77813 /* AllUsersViewModel.swift */,
 				B207E7D82765D29D00F39D0B /* GraphView.swift */,
@@ -213,7 +210,6 @@
 				B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */,
 				B29723A327611D8800570BA8 /* LoginView.swift in Sources */,
 				B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */,
-				B2C6158227807A1F00DD1055 /* MainStepperViewModel.swift in Sources */,
 				B207E7D92765D29D00F39D0B /* GraphView.swift in Sources */,
 				B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */,
 				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,

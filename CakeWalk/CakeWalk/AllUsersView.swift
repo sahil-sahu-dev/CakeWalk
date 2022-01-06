@@ -24,11 +24,15 @@ struct AllUsersView: View {
         NavigationView {
             
             List(allUsersViewModel.allUsers) { user in
-                HStack{
-                    
-                    Text(user.name)
+                Section{
+                    VStack{
+                        Text(user.name)
+                        Text(String(user.count ?? 0))
+                    }
                     
                 }
+                    
+                
             }
             
             .onAppear {

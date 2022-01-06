@@ -91,30 +91,32 @@ class UserStepperViewModel: ObservableObject {
 
                 newCount = statistics.sumQuantity()?.doubleValue(for: .count())
             }
+            
+            if let newCount = newCount, let count = currentUser?.count {
+                if newCount > count {
+                    
+                    guard let user_uid = FirebaseManager.shared.auth.currentUser?.uid else {
+                        self.errorMessage = "Could not find user uid"
+                        return
+                    }
+                    
+                    self.errorMessage = "\(user_uid)"
+                    
+                    let uid = currentUser?.uid
+                    let name = currentUser?.name
+                    
+                    let newData = ["uid": uid ?? "none" , "count": newCount , "name": name ?? "none"] as [String : Any]
+                    
+                    FirebaseManager.shared.firestore.collection("users").document(user_uid).setData(newData) { error in
+                        
+                        if let error = error {
+                            print("Error stroring health data to firestore \(error)")
+                            return
+                        }
 
-            currentUser?.count = newCount
-
-            guard let user_uid = FirebaseManager.shared.auth.currentUser?.uid else {
-                self.errorMessage = "Could not find user uid"
-                return
-            }
-            
-            self.errorMessage = "\(user_uid)"
-            
-            let uid = currentUser?.uid
-            let count = currentUser?.count
-            let name = currentUser?.name
-            
-            let newData = ["uid": uid ?? "none" , "count": count ?? 0, "name": name ?? "none"] as [String : Any]
-            
-            FirebaseManager.shared.firestore.collection("users").document(user_uid).setData(newData) { error in
-                
-                if let error = error {
-                    print("Error stroring health data to firestore \(error)")
-                    return
+                        print("Stored health data to firestore + count = \(newCount)")
+                    }
                 }
-
-                print("Stored health data to firestore")
             }
         }
     }

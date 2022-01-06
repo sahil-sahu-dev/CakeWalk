@@ -26,16 +26,13 @@ struct UserStepperView: View {
                         Text("\(userStepperViewModel.getStepsCount())")
                         GraphView()
                     }
-                    
-                    
                     .padding()
-                    
-                    
                 }
-                
             }
             .navigationTitle("Your steps data")
-
+            .onAppear {
+                userStepperViewModel.fetchCurrentUser()
+            }
         }
     }
     
