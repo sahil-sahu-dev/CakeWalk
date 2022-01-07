@@ -15,6 +15,9 @@
 		B25235662752498400F20DAB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B25235652752498400F20DAB /* FirebaseFirestore */; };
 		B25235682752498400F20DAB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B25235672752498400F20DAB /* FirebaseStorage */; };
 		B252356C2752598000F20DAB /* StepCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B252356B2752598000F20DAB /* StepCardView.swift */; };
+		B25A55032787F5A800BC8A63 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A55022787F5A800BC8A63 /* BarChartCell.swift */; };
+		B25A55052787F6C800BC8A63 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A55042787F6C800BC8A63 /* BarChart.swift */; };
+		B25A55072787F71000BC8A63 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A55062787F71000BC8A63 /* ChartData.swift */; };
 		B29723A327611D8800570BA8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29723A227611D8800570BA8 /* LoginView.swift */; };
 		B2ACBDE9277ED35A00C0B805 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2ACBDE8277ED35A00C0B805 /* GoogleSignIn */; };
 		B2C6158427807E9200DD1055 /* UserStepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */; };
@@ -35,6 +38,9 @@
 		B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2523560275248BF00F20DAB /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B252356B2752598000F20DAB /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
+		B25A55022787F5A800BC8A63 /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		B25A55042787F6C800BC8A63 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		B25A55062787F71000BC8A63 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		B29723A227611D8800570BA8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStepperViewModel.swift; sourceTree = "<group>"; };
 		B2E423412785741500F77813 /* AllUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersView.swift; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B25A55082788001A00BC8A63 /* BarChart */ = {
+			isa = PBXGroup;
+			children = (
+				B25A55042787F6C800BC8A63 /* BarChart.swift */,
+				B25A55062787F71000BC8A63 /* ChartData.swift */,
+				B25A55022787F5A800BC8A63 /* BarChartCell.swift */,
+			);
+			path = BarChart;
+			sourceTree = "<group>";
+		};
 		B2FCE0AD273AC7600074FCCB = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +105,7 @@
 			children = (
 				B2FCE0CA273ACDD90074FCCB /* CakeWalk.entitlements */,
 				B2FCE0C9273ACAD90074FCCB /* Info.plist */,
+				B25A55082788001A00BC8A63 /* BarChart */,
 				B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */,
 				B2FCE0BB273AC7600074FCCB /* UserStepperView.swift */,
 				B2C6158327807E9200DD1055 /* UserStepperViewModel.swift */,
@@ -206,16 +223,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2523561275248BF00F20DAB /* FirebaseManager.swift in Sources */,
+				B25A55072787F71000BC8A63 /* ChartData.swift in Sources */,
 				B2FCE0BC273AC7600074FCCB /* UserStepperView.swift in Sources */,
 				B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */,
 				B29723A327611D8800570BA8 /* LoginView.swift in Sources */,
 				B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */,
 				B207E7D92765D29D00F39D0B /* GraphView.swift in Sources */,
 				B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */,
+				B25A55032787F5A800BC8A63 /* BarChartCell.swift in Sources */,
 				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,
 				B252356C2752598000F20DAB /* StepCardView.swift in Sources */,
 				B2C6158427807E9200DD1055 /* UserStepperViewModel.swift in Sources */,
 				B2E423442785761200F77813 /* AllUsersViewModel.swift in Sources */,
+				B25A55052787F6C800BC8A63 /* BarChart.swift in Sources */,
 				B2E423422785741500F77813 /* AllUsersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
