@@ -18,7 +18,7 @@ struct CakeWalkApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainStepperView().environmentObject(UserStepperViewModel())
+            MainStepperView()
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AllUsersView: View {
     
-    @EnvironmentObject var userStepperViewModel: UserStepperViewModel
+    
     @EnvironmentObject var allUsersViewModel: AllUsersViewModel
     var healthStore: HealthStore?
     
@@ -107,6 +107,6 @@ struct AllUsersView_Previews: PreviewProvider {
     static var previews: some View {
         AllUsersView(healthStore: HealthStore())
             .environmentObject(AllUsersViewModel())
-            .environmentObject(UserStepperViewModel())
+            
     }
 }

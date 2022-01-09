@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainStepperView: View {
     
-    @EnvironmentObject var userStepperViewModel: UserStepperViewModel
     
     var body: some View {
         TabView{
@@ -19,18 +18,13 @@ struct MainStepperView: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                 }
-//            UserStepperView()
-//              
-//                .tabItem {
-//                    Image(systemName: "person.fill")
-//                }
         }
     }
 }
 
 struct MainStepperView_Previews: PreviewProvider {
     static var previews: some View {
-        MainStepperView().environmentObject(UserStepperViewModel())
+        MainStepperView()
     }
 }
 
