@@ -11,6 +11,7 @@ struct AllUsersView: View {
     
     
     @EnvironmentObject var allUsersViewModel: AllUsersViewModel
+    
     var healthStore: HealthStore?
     
     init(healthStore: HealthStore) {
@@ -23,26 +24,27 @@ struct AllUsersView: View {
     var body: some View {
         NavigationView {
             
-            VStack {
-                
-                BarChart(title: "", legend: "", barColor: Color.orange, data: allUsersViewModel.chartData)
-                
-                //                List(allUsersViewModel.allUsers){ user in
-                //                    VStack{
-                //                        Text(user.name).padding()
-                //                        Text(String(user.count ?? 0)).padding()
-                //                    }.background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
-                //
-                //
-                //                }
-                
-                
-            }
             
-            .onAppear {
-                initializeViews()
-            }
+            ScrollView{
+                HStack{
+                    BarChart(title: "Friends", legend: "", barColor: Color.orange, data: allUsersViewModel.chartData)
+                    Text("👟 \(Int(allUsersViewModel.currentUserCount))")
+                }
+                
             
+                ForEach(allUsersViewModel.allUsers){ user in
+                    VStack{
+                        Text(user.name).padding()
+                        Text(String(user.count ?? 0)).padding()
+                    }.background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
+                    
+                    
+                }
+            }
+            .background(Color(.init(white: 0, alpha: 0.05))
+                             .ignoresSafeArea())
+            
+           
             .navigationBarTitle("Home")
             
             .toolbar {
@@ -54,28 +56,38 @@ struct AllUsersView: View {
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(Color(.label))
                     }
-                }
-            }
-            .actionSheet(isPresented: $shouldShowLogOutOptions) {
-                .init(title: Text("Settings"), message: Text("What do you want to do?"), buttons: [
-                    .destructive(Text("Sign Out"), action: {
-                        
-                        allUsersViewModel.handleSignOut()
-                        
-                        print("handle sign out")
-                    }),
-                    .cancel()
-                ])
-            }
-            .fullScreenCover(isPresented: $allUsersViewModel.isUserCurrentlyLoggedOut, onDismiss: nil) {
-                LoginView {
-                    
-                    self.initializeViews()
-                    self.allUsersViewModel.isUserCurrentlyLoggedOut = false
                     
                 }
+            }
+            
+            
+        }
+        .onAppear {
+            initializeViews()
+        }
+        
+        .actionSheet(isPresented: $shouldShowLogOutOptions) {
+            .init(title: Text("Settings"), message: Text("What do you want to do?"), buttons: [
+                .destructive(Text("Sign Out"), action: {
+
+                    allUsersViewModel.handleSignOut()
+
+                    print("handle sign out")
+                }),
+                .cancel()
+            ])
+        }
+
+        .fullScreenCover(isPresented: $allUsersViewModel.isUserCurrentlyLoggedOut, onDismiss: nil) {
+            LoginView {
+
+                self.initializeViews()
+                self.allUsersViewModel.isUserCurrentlyLoggedOut = false
+
             }
         }
+        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     
@@ -90,8 +102,7 @@ struct AllUsersView: View {
                         DispatchQueue.main.sync {
                             allUsersViewModel.updateSteps(with: statistics)
                             
-                            allUsersViewModel.fetchAllUsers() {
-                            }
+                            allUsersViewModel.fetchAllUsers() 
                             
                         }
                     }
@@ -107,6 +118,6 @@ struct AllUsersView_Previews: PreviewProvider {
     static var previews: some View {
         AllUsersView(healthStore: HealthStore())
             .environmentObject(AllUsersViewModel())
-            
+        
     }
 }

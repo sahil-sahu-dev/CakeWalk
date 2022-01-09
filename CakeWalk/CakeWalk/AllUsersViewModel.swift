@@ -14,6 +14,7 @@ class AllUsersViewModel: ObservableObject {
     @Published var allUsers = [StepUser]()
     @Published var errorMessage = ""
     @Published var currentUser: StepUser?
+    @Published var currentUserCount: Double
     @Published var isUserCurrentlyLoggedOut: Bool
     @Published var chartData = [ChartData]()
     
@@ -25,13 +26,14 @@ class AllUsersViewModel: ObservableObject {
         self.startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
         self.endDate = Date()
         self.isUserCurrentlyLoggedOut = FirebaseManager.shared.auth.currentUser?.uid == nil ? true : false
-        
+        self.currentUserCount = 0
     }
     
-    public func fetchAllUsers(completion: @escaping () -> Void) {
+    public func fetchAllUsers() {
         
         allUsers.removeAll()
         chartData.removeAll()
+        
         
         FirebaseManager.shared.firestore.collection("users").getDocuments { healthDataDocument, error in
             
@@ -52,6 +54,8 @@ class AllUsersViewModel: ObservableObject {
                     self.currentUser?.uid = uid
                     self.currentUser?.name = name
                     self.currentUser?.count = count
+                    
+                    
                 }
                 
                 
@@ -64,7 +68,7 @@ class AllUsersViewModel: ObservableObject {
             
         }
         
-        completion()
+        
     }
     
     
@@ -98,7 +102,7 @@ class AllUsersViewModel: ObservableObject {
                     print("Error stroring health data to firestore \(error)")
                     return
                 }
-                
+                self.currentUserCount = newCount ?? 0
                 print("Stored health data to firestore + count = \(String(describing: newCount))")
             }
         }

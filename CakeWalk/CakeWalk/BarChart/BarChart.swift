@@ -20,14 +20,18 @@ struct BarChart: View {
     @State private var touchLocation: CGFloat = -1
     
     var body: some View {
-        VStack(alignment: .leading) {
+        
+        
+            
+            
+            VStack(alignment: .leading) {
             Text(title)
                 .bold()
-                .font(.largeTitle)
+                .font(.title)
             Text(currentValue.isEmpty == true ? "" : "\(currentLabel): \(currentValue)")
                 .font(.headline)
             
-            GeometryReader { geometry in
+                GeometryReader { geometry in
                 VStack {
                     HStack {
                         ForEach(0..<data.count, id: \.self) { i in
@@ -60,20 +64,23 @@ struct BarChart: View {
                     )
                     
                     
-                    if !currentLabel.isEmpty {
-                        Text(currentLabel)
-                        
-                            .bold()
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
-                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
-                            .animation(.easeIn)
-                    }
+//                    if !currentLabel.isEmpty {
+//                        Text(currentLabel)
+//                        
+//                            .bold()
+//                            .foregroundColor(.black)
+//                            .padding()
+//                            .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
+//                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
+//                            .animation(.easeIn)
+//                    }
                 }
             }
+        
         }
-        .padding()
+            .frame(width: 175, height: 275)
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 5))
     }
     
     
@@ -131,5 +138,6 @@ struct BarChart: View {
 struct BarChart_Previews: PreviewProvider {
     static var previews: some View {
         BarChart(title: "Monthly Sales", legend: "EUR", barColor: .blue, data: chartDataSet)
+            
     }
 }
