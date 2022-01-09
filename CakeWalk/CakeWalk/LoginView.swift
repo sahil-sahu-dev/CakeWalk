@@ -12,8 +12,7 @@ import GoogleSignIn
 struct LoginView: View{
     
     let didCompleteLoginProcess: () -> ()
-
-    @State private var email = ""
+    
     @State private var name = ""
     @State private var uid = ""
     
@@ -22,15 +21,16 @@ struct LoginView: View{
         NavigationView {
             
             VStack {
-                Text(name)
+                
                 Spacer()
                 Button {
                     
                     
                     handleAction { error, success in
                         if success == 1 {
-                           
+                            
                             let data = ["uid" : uid, "name": name, "count": 0] as [String:Any]
+                            
                             
                             FirebaseManager.shared.firestore.collection("users").document(uid).setData(data
                             ){ error in
@@ -43,10 +43,12 @@ struct LoginView: View{
                                 print("Added new user")
                             }
                             
+                            
+                            
                             self.didCompleteLoginProcess()
                         }
                     }
-                   
+                    
                     
                 } label: {
                     HStack {

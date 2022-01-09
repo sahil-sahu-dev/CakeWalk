@@ -23,7 +23,7 @@ struct UserStepperView: View {
                 ScrollView {
                     
                     VStack{
-                        Text("\(userStepperViewModel.getStepsCount())")
+                        //Text("\(userStepperViewModel.getStepsCount())")
                         GraphView()
                     }
                     .padding()
@@ -31,7 +31,7 @@ struct UserStepperView: View {
             }
             .navigationTitle("Your steps data")
             .onAppear {
-                userStepperViewModel.fetchCurrentUser()
+               // userStepperViewModel.fetchCurrentUser()
             }
         }
     }

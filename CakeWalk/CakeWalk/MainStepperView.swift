@@ -19,11 +19,11 @@ struct MainStepperView: View {
                 .tabItem {
                     Image(systemName: "house.fill")
                 }
-            UserStepperView()
-              
-                .tabItem {
-                    Image(systemName: "person.fill")
-                }
+//            UserStepperView()
+//              
+//                .tabItem {
+//                    Image(systemName: "person.fill")
+//                }
         }
     }
 }

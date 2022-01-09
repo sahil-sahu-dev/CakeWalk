@@ -18,39 +18,29 @@ struct AllUsersView: View {
     }
     
     @State var shouldShowLogOutOptions = false
-  
+    
     
     var body: some View {
         NavigationView {
             
-            List(allUsersViewModel.allUsers) { user in
-                Section{
-                    VStack{
-                        Text(user.name)
-                        Text(String(user.count ?? 0))
-                    }
-                    
-                }
-                    
+            VStack {
+                
+                BarChart(title: "", legend: "", barColor: Color.orange, data: allUsersViewModel.chartData)
+                
+                //                List(allUsersViewModel.allUsers){ user in
+                //                    VStack{
+                //                        Text(user.name).padding()
+                //                        Text(String(user.count ?? 0)).padding()
+                //                    }.background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
+                //
+                //
+                //                }
+                
                 
             }
             
             .onAppear {
-                if let healthStore = healthStore {
-                    healthStore.requestAuthorization{ success in
-                        
-                        if success {
-                            healthStore.calculateSteps { statistics in
-                                
-                                DispatchQueue.main.async {
-                                    userStepperViewModel.updateSteps(with: statistics)
-                                }
-                            }
-                            
-                        }
-                        
-                    }
-                }
+                initializeViews()
             }
             
             .navigationBarTitle("Home")
@@ -70,20 +60,44 @@ struct AllUsersView: View {
                 .init(title: Text("Settings"), message: Text("What do you want to do?"), buttons: [
                     .destructive(Text("Sign Out"), action: {
                         
-                        userStepperViewModel.handleSignOut()
+                        allUsersViewModel.handleSignOut()
                         
                         print("handle sign out")
                     }),
                     .cancel()
                 ])
             }
-            .fullScreenCover(isPresented: $userStepperViewModel.isUserCurrentlyLoggedOut, onDismiss: nil) {
+            .fullScreenCover(isPresented: $allUsersViewModel.isUserCurrentlyLoggedOut, onDismiss: nil) {
                 LoginView {
                     
-                    userStepperViewModel.fetchCurrentUser()
-                    self.userStepperViewModel.isUserCurrentlyLoggedOut = false
+                    self.initializeViews()
+                    self.allUsersViewModel.isUserCurrentlyLoggedOut = false
                     
                 }
+            }
+        }
+    }
+    
+    
+    func initializeViews() {
+        
+        if let healthStore = healthStore {
+            healthStore.requestAuthorization{ success in
+                
+                if success {
+                    healthStore.calculateSteps { statistics in
+                        
+                        DispatchQueue.main.sync {
+                            allUsersViewModel.updateSteps(with: statistics)
+                            
+                            allUsersViewModel.fetchAllUsers() {
+                            }
+                            
+                        }
+                    }
+                    
+                }
+                
             }
         }
     }
