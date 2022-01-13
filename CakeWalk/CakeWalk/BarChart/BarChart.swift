@@ -14,6 +14,9 @@ struct BarChart: View {
     var barColor: Color
     var data: [ChartData]
     
+    var x: CGFloat
+    var y: CGFloat
+    
     @State private var currentValue = ""
     @State private var currentLabel = ""
     
@@ -64,21 +67,21 @@ struct BarChart: View {
                     )
                     
                     
-//                    if !currentLabel.isEmpty {
-//                        Text(currentLabel)
-//                        
-//                            .bold()
-//                            .foregroundColor(.black)
-//                            .padding()
-//                            .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
-//                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
-//                            .animation(.easeIn)
-//                    }
+                    if !currentLabel.isEmpty {
+                        Text(currentLabel)
+                        
+                            .bold()
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 3))
+                            .offset(x: labelOffset(in: geometry.frame(in: .local).width))
+                            .animation(.easeIn)
+                    }
                 }
             }
         
         }
-            .frame(width: 175, height: 275)
+            .frame(width: x * 0.45, height: y*0.33)
             .padding()
             .background(RoundedRectangle(cornerRadius: 25).foregroundColor(.white).shadow(radius: 5))
     }
@@ -135,9 +138,9 @@ struct BarChart: View {
     }
 }
 
-struct BarChart_Previews: PreviewProvider {
-    static var previews: some View {
-        BarChart(title: "Monthly Sales", legend: "EUR", barColor: .blue, data: chartDataSet)
-            
-    }
-}
+//struct BarChart_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //BarChart(title: "Monthly Sales", legend: "EUR", barColor: .blue, data: chartDataSet)
+//            
+//    }
+//}
