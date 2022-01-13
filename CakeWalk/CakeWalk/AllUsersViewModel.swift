@@ -12,11 +12,17 @@ import HealthKit
 class AllUsersViewModel: ObservableObject {
     
     @Published var allUsers = [StepUser]()
+    
     @Published var errorMessage = ""
+    
     @Published var currentUser: StepUser?
+    
     @Published var currentUserCount: Double
+    
     @Published var isUserCurrentlyLoggedOut: Bool
+    
     @Published var chartData = [ChartData]()
+    
     
     var startDate: Date
     var endDate: Date
@@ -65,13 +71,17 @@ class AllUsersViewModel: ObservableObject {
                 self.chartData.append(ChartData(label: name, value: count))
                 
             }
-            
+            self.allUsers = self.sortUsers().reversed()
         }
-        
         
     }
     
-    
+    public func sortUsers() -> [StepUser] {
+       
+        allUsers = allUsers.sorted {$0.count ?? 0 < $1.count ?? 0}
+        
+        return allUsers
+    }
     
     public func updateSteps(with statisticsCollection: HKStatisticsCollection) {
         
@@ -89,88 +99,97 @@ class AllUsersViewModel: ObservableObject {
                 return
             }
             
-            self.errorMessage = "\(user_uid)"
-            
-            let uid = FirebaseManager.shared.auth.currentUser?.uid
-            let name = FirebaseManager.shared.auth.currentUser?.displayName
-            
-            let newData = ["uid": uid ?? "none" , "count": newCount ?? 0 , "name": name ?? "none"] as [String : Any]
-            
-            FirebaseManager.shared.firestore.collection("users").document(user_uid).setData(newData) { error in
+            if self.currentUserCount != newCount {
                 
-                if let error = error {
-                    print("Error stroring health data to firestore \(error)")
-                    return
+                
+                self.errorMessage = "\(user_uid)"
+                
+                let uid = FirebaseManager.shared.auth.currentUser?.uid
+                let name = FirebaseManager.shared.auth.currentUser?.displayName
+                
+                let newData = ["uid": uid ?? "none" , "count": newCount ?? 0 , "name": name ?? "none"] as [String : Any]
+                
+                FirebaseManager.shared.firestore.collection("users").document(user_uid).setData(newData) { error in
+                    
+                    if let error = error {
+                        print("Error stroring health data to firestore \(error)")
+                        return
+                    }
+                    self.currentUserCount = newCount ?? 0
+                    print("Stored health data to firestore + count = \(String(describing: newCount))")
                 }
-                self.currentUserCount = newCount ?? 0
-                print("Stored health data to firestore + count = \(String(describing: newCount))")
             }
+            
         }
         
         
     }
-
-
-
-
-public func getStepsCount() -> Int {
-    if isUserCurrentlyLoggedOut {
-        return 0
-    }
     
-    return Int(currentUser?.count ?? 0)
-}
-
-
-
-public func handleSignOut() {
-    do{
-        try FirebaseManager.shared.auth.signOut()
-    }
-    catch{
-        self.errorMessage = error.localizedDescription
-        print(error.localizedDescription)
-    }
     
-    self.currentUser = nil
-    self.isUserCurrentlyLoggedOut = true
-}
-
-
-public func fetchCurrentUser() {
     
-    guard let user_uid = FirebaseManager.shared.auth.currentUser?.uid else {
-        self.errorMessage = "Could not find user uid"
-        return
-    }
     
-    self.errorMessage = "\(user_uid)"
-    
-    FirebaseManager.shared.firestore.collection("users").document(user_uid).getDocument { snapshot, error in
-        
-        if let error = error {
-            self.errorMessage = "Could not fetch user data \(error)"
-            return
+    public func getStepsCount() -> Int {
+        if isUserCurrentlyLoggedOut {
+            return 0
         }
         
-        
-        guard let data = snapshot?.data() else {
-            self.errorMessage = "No data found"
-            return
+        return Int(currentUser?.count ?? 0)
+    }
+    
+    
+    
+    public func handleSignOut() {
+        do{
+            try FirebaseManager.shared.auth.signOut()
+        }
+        catch{
+            self.errorMessage = error.localizedDescription
+            print(error.localizedDescription)
         }
         
-        self.errorMessage = "Data: \(data.description)"
-        
-        let uid = data["uid"] as? String ?? ""
-        let count = data["count"] as? Double ?? 0
-        let name = data["name"]  as? String ?? ""
-        
-        self.currentUser = StepUser(uid: uid, count: count, name: name)
-        
+        self.currentUser = nil
+        self.isUserCurrentlyLoggedOut = true
     }
-}
-
-
-
-
+    
+    
+//    public func fetchCurrentUser() {
+//
+//        guard let user_uid = FirebaseManager.shared.auth.currentUser?.uid else {
+//            self.errorMessage = "Could not find user uid"
+//            return
+//        }
+//
+//        self.errorMessage = "\(user_uid)"
+//
+//        self.isFetchingData = true
+//
+//        FirebaseManager.shared.firestore.collection("users").document(user_uid).getDocument { snapshot, error in
+//
+//            if let error = error {
+//                self.errorMessage = "Could not fetch user data \(error)"
+//                return
+//            }
+//
+//
+//            guard let data = snapshot?.data() else {
+//                self.errorMessage = "No data found"
+//                return
+//            }
+//
+//            self.errorMessage = "Data: \(data.description)"
+//
+//            let uid = data["uid"] as? String ?? ""
+//            let count = data["count"] as? Double ?? 0
+//            let name = data["name"]  as? String ?? ""
+//
+//            self.currentUser = StepUser(uid: uid, count: count, name: name)
+//
+//        }
+//
+//        self.isFetchingData = false
+//    }
+    
+    
+    
+    
 }

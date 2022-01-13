@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */; };
+		B20EFD2227900BCA006D2001 /* Array+firstPositionMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EFD2127900BCA006D2001 /* Array+firstPositionMatching.swift */; };
 		B21E6081275A85D200DD2AD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */; };
 		B2523561275248BF00F20DAB /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2523560275248BF00F20DAB /* FirebaseManager.swift */; };
 		B25235642752498400F20DAB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B25235632752498400F20DAB /* FirebaseAuth */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStepperView.swift; sourceTree = "<group>"; };
+		B20EFD2127900BCA006D2001 /* Array+firstPositionMatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+firstPositionMatching.swift"; sourceTree = "<group>"; };
 		B21E6080275A85D200DD2AD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2523560275248BF00F20DAB /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		B252356B2752598000F20DAB /* StepCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCardView.swift; sourceTree = "<group>"; };
@@ -102,9 +102,9 @@
 				B25A55082788001A00BC8A63 /* BarChart */,
 				B2FCE0B9273AC7600074FCCB /* CakeWalkApp.swift */,
 				B252356B2752598000F20DAB /* StepCardView.swift */,
-				B21E607E275A7A9B00DD2AD2 /* MainStepperView.swift */,
 				B2E423412785741500F77813 /* AllUsersView.swift */,
 				B2E423432785761200F77813 /* AllUsersViewModel.swift */,
+				B20EFD2127900BCA006D2001 /* Array+firstPositionMatching.swift */,
 				B2FCE0CE273ADCCF0074FCCB /* Step.swift */,
 				B29723A227611D8800570BA8 /* LoginView.swift */,
 				B2523560275248BF00F20DAB /* FirebaseManager.swift */,
@@ -213,11 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20EFD2227900BCA006D2001 /* Array+firstPositionMatching.swift in Sources */,
 				B2523561275248BF00F20DAB /* FirebaseManager.swift in Sources */,
 				B25A55072787F71000BC8A63 /* ChartData.swift in Sources */,
 				B2FCE0CF273ADCCF0074FCCB /* Step.swift in Sources */,
 				B29723A327611D8800570BA8 /* LoginView.swift in Sources */,
-				B21E607F275A7A9B00DD2AD2 /* MainStepperView.swift in Sources */,
 				B2FCE0C8273AC78A0074FCCB /* HealthStore.swift in Sources */,
 				B25A55032787F5A800BC8A63 /* BarChartCell.swift in Sources */,
 				B2FCE0BA273AC7600074FCCB /* CakeWalkApp.swift in Sources */,
